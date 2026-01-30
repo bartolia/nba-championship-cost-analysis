@@ -12,10 +12,36 @@ This project uses multiple external datasets:
 - Player statistics and box score data
 - NBA championship results by season
 
+The notebook expects files with names such as:
+- `NBAPayroll(1990-2023).csv`
+- `NBASalaries(1990-2023).csv`
+- `NBAPlayerStats(1950-2022).csv`
+- `NBAPlayerBoxScoreStats(1950-2022).csv`
+
+These files are not included in the repository but the link is at the top of the notebook
+
+## Project Structure
+├── notebooks/
+│ └── nba_payroll_analysis.ipynb
+├── data/
+│ └── raw/ # External CSV files (not tracked in Git)
+├── results/
+│ └── figures/ # Generated plots (optional)
+├── README.md
+├── requirements.txt
+└── .gitignore
+
+
+---
+
+## Data
+This project uses multiple external datasets related to NBA payrolls, player salaries, and championship results.
+
 ### Data sources
-- Kaggle: NBA Players & Team Data  
+- **Kaggle – NBA Players & Team Data**  
   https://www.kaggle.com/datasets/loganlauton/nba-players-and-team-data
-- Wikipedia: List of NBA Champions  
+
+- **Wikipedia – List of NBA Champions**  
   https://en.wikipedia.org/wiki/List_of_NBA_champions
 
 ### Expected data location
@@ -29,6 +55,62 @@ The notebook expects files with names such as:
 - `NBAPlayerStats(1950-2022).csv`
 - `NBAPlayerBoxScoreStats(1950-2022).csv`
 
-These files are not included in the repository but the link is at the top of the notebook
+**Note:** These data files are not included in the repository due to size and licensing constraints. Links to download the data are provided above and at the top of the notebook.
 
-## Project Structure
+---
+
+## Environment Setup (venv)
+This project uses a Python virtual environment managed with `venv`.
+
+### Create and activate the virtual environment
+From the project root:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate   # macOS / Linux
+# .venv\Scripts\activate    # Windows
+```
+
+### Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+numpy
+pandas
+matplotlib
+scipy
+
+## Reproducing Results
+To reproduce one of the key results (e.g., the comparison of championship payrolls vs. league averages):
+
+Clone the repository:
+
+git clone <your-repo-url>
+cd <your-repo-name>
+
+
+Set up the environment (see above).
+
+Download the required datasets and place them in:
+data/raw/
+
+
+Open the notebook:
+jupyter notebook notebooks/nba_payroll_analysis.ipynb
+
+
+Run all cells from top to bottom.
+
+## References
+
+Lauton, Logan. “NBA Players & Team Data.” Kaggle, 6 Apr. 2023.
+https://www.kaggle.com/datasets/loganlauton/nba-players-and-team-data
+
+“List of NBA Champions.” Wikipedia, Wikimedia Foundation.
+https://en.wikipedia.org/wiki/List_of_NBA_champions
+
+Matplotlib Pie Charts.
+https://www.w3schools.com/python/matplotlib_pie_charts.asp
+
+Stack Overflow discussions on data cleaning and visualization.
