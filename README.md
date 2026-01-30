@@ -59,21 +59,20 @@ The notebook expects files with names such as:
 
 ---
 
-## Environment Setup (venv)
-This project uses a Python virtual environment managed with `venv`.
+Environment Setup (uv)
 
-### Create and activate the virtual environment
-From the project root:
+This project uses uv for fast and reproducible Python environment management.
 
+Create and activate the virtual environment using both lines:
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate   # macOS / Linux
-# .venv\Scripts\activate    # Windows
+uv venv
+source .venv/bin/activate
 ```
 
-### Install Dependencies
+Install dependencies:
+
 ```bash
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
 
 numpy
