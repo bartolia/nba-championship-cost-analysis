@@ -5,21 +5,6 @@ This project analyzes historical NBA team payroll data to investigate how much i
 
 The primary outputs of this project are exploratory visualizations and summary statistics generated in a Jupyter notebook.
 
-## Data
-This project uses multiple external datasets:
-
-- NBA team payroll and salary data (1990–2023)
-- Player statistics and box score data
-- NBA championship results by season
-
-The notebook expects files with names such as:
-- `NBAPayroll(1990-2023).csv`
-- `NBASalaries(1990-2023).csv`
-- `NBAPlayerStats(1950-2022).csv`
-- `NBAPlayerBoxScoreStats(1950-2022).csv`
-
-These files are not included in the repository but the link is at the top of the notebook
-
 ## Project Structure
 ├── notebooks/
 │ └── nba_payroll_analysis.ipynb
@@ -36,6 +21,20 @@ These files are not included in the repository but the link is at the top of the
 
 ## Data
 This project uses multiple external datasets related to NBA payrolls, player salaries, and championship results.
+
+This project uses multiple external datasets:
+
+- NBA team payroll and salary data (1990–2023)
+- Player statistics and box score data
+- NBA championship results by season
+
+The notebook expects files with names such as:
+- `NBAPayroll(1990-2023).csv`
+- `NBASalaries(1990-2023).csv`
+- `NBAPlayerStats(1950-2022).csv`
+- `NBAPlayerBoxScoreStats(1950-2022).csv`
+
+These files are not included in the repository but the link is at the top of the notebook
 
 ### Data sources
 - **Kaggle – NBA Players & Team Data**  
