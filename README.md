@@ -6,15 +6,17 @@ This project analyzes historical NBA team payroll data to investigate how much i
 The primary outputs of this project are exploratory visualizations and summary statistics generated in a Jupyter notebook.
 
 ## Project Structure
-├── notebooks/
-│ └── nba_payroll_analysis.ipynb
-├── data/
-│ └── raw/ # External CSV files (not tracked in Git)
-├── results/
-│ └── figures/ # Generated plots (optional)
-├── README.md
-├── requirements.txt
-└── .gitignore
+>nba-championship-cost-analysis/
+>├── notebooks/
+>│   └── nba_payroll_analysis.ipynb
+>├── data/
+>│   └── raw/          # empty, gitignored
+>├── pyproject.toml
+>├── uv.lock
+>├── requirements.txt  # optional fallback
+>├── .gitignore
+>└── README.md
+
 
 
 ---
@@ -58,28 +60,48 @@ The notebook expects files with names such as:
 
 ---
 
-Environment Setup (uv)
+Environment Setup (Recommended: uv)
+Why uv?
 
-This project uses uv for fast and reproducible Python environment management.
+This project uses uv for fast, reproducible Python environment management.
+Using uv.lock ensures everyone runs the exact same dependency versions.
 
-Create and activate the virtual environment using both lines:
+Install uv
+
+macOS / Linux
 ```bash
-uv venv
-source .venv/bin/activate
+curl -LsSf https://astral.sh/uv/install.sh | sh
+Windows (PowerShell)
 ```
 
-Install dependencies:
+Windows (powershell)
+powershell
+irm https://astral.sh/uv/install.ps1 | iex
 
-```bash
-uv pip install -r requirements.txt
+
+Set up the environment
 ```
+bash
+uv sync
+```
+
+Alternative: Traditional venv (Optional)
+```bash
+python -m venv .venv
+source .venv/bin/activate   # macOS/Linux
+.venv\Scripts\activate      # Windows
+pip install -r requirements.txt
+```
+
+
+Note: requirements.txt is provided for compatibility, but uv is preferred.
 
 numpy
 pandas
 matplotlib
 scipy
 
-## Reproducing Results
+## Reproducibility
 To reproduce one of the key results (e.g., the comparison of championship payrolls vs. league averages):
 
 Clone the repository:
@@ -87,18 +109,20 @@ Clone the repository:
 git clone <your-repo-url>
 cd <your-repo-name>
 
-
 Set up the environment (see above).
 
 Download the required datasets and place them in:
 data/raw/
 
+This project is fully reproducible using `uv`.
 
-Open the notebook:
-jupyter notebook notebooks/nba_payroll_analysis.ipynb
+After cloning the repository and downloading the data:
+1. Run `uv sync`
+2. Open the notebook in Jupyter
+3. Run all cells from top to bottom
 
+All dependency versions are pinned in `uv.lock`.
 
-Run all cells from top to bottom.
 
 ## References
 
